@@ -31,21 +31,12 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://parentis.app",
     siteName: "Parentis",
-    images: [
-      {
-        url: "https://parentis.app/og-card.png",
-        width: 1200,
-        height: 630,
-        alt: "Parentis - One place for all your kids apps",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Parentis - This is not another app, it's a lifeline.",
     description:
       "Parentis extracts info from the 5-10 apps you juggle and syncs it to your existing calendar. No new workflows.",
-    images: ["https://parentis.app/og-card.png"],
   },
   icons: {
     icon: "/favicon.png",

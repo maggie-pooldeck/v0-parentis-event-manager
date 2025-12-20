@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Parentis",
     images: [
       {
-        url: "/og-card.png",
+        url: "https://parentis.app/og-card.png",
         width: 1200,
         height: 630,
         alt: "Parentis - One place for all your kids apps",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Parentis - This is not another app, it's a lifeline.",
     description:
       "Parentis extracts info from the 5-10 apps you juggle and syncs it to your existing calendar. No new workflows.",
-    images: ["/og-card.png"],
+    images: ["https://parentis.app/og-card.png"],
   },
   icons: {
     icon: "/favicon.png",

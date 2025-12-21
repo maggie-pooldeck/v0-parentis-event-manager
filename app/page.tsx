@@ -1,13 +1,7 @@
-"use client"
-
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Mail, Calendar, Camera } from "lucide-react"
-import WaitlistModal from "@/components/WaitlistModal"
+import { Mail, Calendar } from "lucide-react"
 
 export default function LandingPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
   return (
     <>
       <div className="relative min-h-screen bg-[#FFFEFB]">
@@ -74,11 +68,7 @@ export default function LandingPage() {
                     juggle and syncs it to your existing calendars. No new workflows. No new apps.
                   </p>
                   <div className="mt-8">
-                    <Button
-                      size="lg"
-                      className="bg-[#6477D5] text-white hover:bg-[#5366C4]"
-                      onClick={() => setIsModalOpen(true)}
-                    >
+                    <Button size="lg" className="bg-[#6477D5] text-white hover:bg-[#5366C4]">
                       Join the waitlist
                     </Button>
                   </div>
@@ -345,8 +335,9 @@ export default function LandingPage() {
                 <div className="flex items-center justify-center lg:order-0">
                   <div className="w-full max-w-md space-y-4">
                     <div className="rounded-lg border-2 border-dashed border-gray-300 bg-white p-8 text-center">
-                      <Camera className="mx-auto h-12 w-12 text-gray-400" />
-                      <p className="mt-2 text-sm text-gray-600">Drop screenshot here</p>
+                      <Button size="lg" className="bg-[#6477D5] text-white hover:bg-[#5366C4]">
+                        Upload Screenshot
+                      </Button>
                     </div>
                     <div className="flex justify-center">
                       <div className="text-[#6CAD76]">
@@ -410,11 +401,7 @@ export default function LandingPage() {
                     Ready to escape the chaos?
                   </h2>
                   <div className="mt-6">
-                    <Button
-                      size="lg"
-                      className="bg-black text-white hover:bg-gray-800"
-                      onClick={() => setIsModalOpen(true)}
-                    >
+                    <Button size="lg" className="bg-black text-white hover:bg-gray-800">
                       Join the waitlist
                     </Button>
                   </div>
@@ -437,9 +424,6 @@ export default function LandingPage() {
           </div>
         </footer>
       </div>
-
-      {/* Waitlist Modal */}
-      <WaitlistModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   )
 }

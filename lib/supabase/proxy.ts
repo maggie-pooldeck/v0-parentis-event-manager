@@ -2,6 +2,17 @@ import { createServerClient } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
 
 export async function updateSession(request: NextRequest) {
+  const userAgent = request.headers.get("user-agent") || ""
+  const isCrawler =
+    /facebookexternalhit|twitterbot|linkedinbot|whatsapp|telegrambot|slackbot|discordbot|applebot/i.test(userAgent)
+
+  if (isCrawler) {
+    // Let crawlers through without auth checks for faster response
+    return NextResponse.next({
+      request,
+    })
+  }
+
   let supabaseResponse = NextResponse.next({
     request,
   })

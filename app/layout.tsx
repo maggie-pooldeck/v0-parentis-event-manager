@@ -22,8 +22,23 @@ export const metadata: Metadata = {
   title: "Parentis - This is not another app, it's a lifeline.",
   description:
     "Parentis extracts info from the 5-10 apps you juggle and syncs it to your existing calendar. No new workflows.",
+  keywords: [
+    "parent organization app",
+    "school calendar management",
+    "kids activity tracker",
+    "parent planner app",
+    "family calendar",
+    "school chaos management",
+    "sports schedule organizer",
+    "family organization",
+    "parent productivity",
+    "kids schedule app",
+  ],
   generator: "v0.app",
   metadataBase: new URL("https://parentis.app"),
+  alternates: {
+    canonical: "https://parentis.app",
+  },
   openGraph: {
     title: "Parentis - This is not another app, it's a lifeline.",
     description:
@@ -31,6 +46,8 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://parentis.app",
     siteName: "Parentis",
+    locale: "en_US",
+    alternateLocale: ["en_GB"],
     images: [
       {
         url: "/opengraph-image.png",

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
-import { Mail, Calendar } from "lucide-react"
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
+import { Mail, Calendar, Plus } from "lucide-react"
 
 export default function LandingPage() {
   return (
@@ -61,12 +62,10 @@ export default function LandingPage() {
                     This is not another app, this is a lifeline.
                   </p>
                   <p className="mt-6 text-lg leading-relaxed text-gray-600 text-pretty">
-                    Parents juggle 5-10 apps per kid.
+                    We're building one place to automatically extract info from all your kids' apps, emails, birthday
+                    invites and more.
                   </p>
-                  <p className="mt-4 text-lg leading-relaxed text-gray-600 text-pretty">
-                    Parentis is <strong>one place</strong> that automatically extracts info from every app and email you
-                    juggle and syncs it to your existing calendars. No new workflows. No new apps.
-                  </p>
+                  <p className="mt-4 font-serif text-2xl text-charcoal text-pretty md:text-3xl">Be first in line.</p>
                   <div className="mt-8">
                     <Button size="lg" className="bg-[#6477D5] text-white hover:bg-[#5366C4]">
                       Join the waitlist
@@ -159,17 +158,20 @@ export default function LandingPage() {
         </section>
 
         {/* Introduction Section */}
-        <section className="relative border-t border-gray-200 py-12 md:py-16">
+        <section className="relative py-12 md:py-16">
           <div className="container relative z-10 mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="font-serif text-3xl font-semibold text-balance text-charcoal md:text-4xl">
                 Because you don't need another app for your kids, you need infrastructure.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-gray-600 text-pretty">
-                Our AI agent pulls relevant info from all your kids apps and emails into your existing calendar and
-                sends out Sunday Reports with the next few weeks of events so you'll never forget to buy a costume for
-                the school play ever again. No new apps. No new calendars. This is what reducing the mental load
-                actually looks like.
+                We're building an AI agent that will pull relevant info from all your kids' apps and emails into your
+                existing calendar and send Sunday Reports with the next few weeks of events so you'll never forget to
+                buy a costume for the school play ever again. No new apps. No new calendars. This is what reducing the
+                mental load actually looks like.
+              </p>
+              <p className="mt-4 text-lg font-semibold leading-relaxed text-gray-900 text-pretty">
+                Join the waitlist to be notified when we launch.
               </p>
             </div>
           </div>
@@ -405,14 +407,136 @@ export default function LandingPage() {
                       Join the waitlist
                     </Button>
                   </div>
+                  <p className="mt-3 text-lg text-gray-700">Join 100+ parents on the waitlist</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="border-t border-[#FFFEFB] bg-transparent py-16 md:py-20">
+          <div className="container relative z-10 mx-auto px-4">
+            <div className="mx-auto max-w-4xl">
+              <h2 className="font-serif text-4xl font-bold text-charcoal text-center mb-12 md:text-5xl">FAQs</h2>
+
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem value="item-1" className="border-0">
+                  <div className="rounded-2xl border border-gray-200 bg-white px-6 py-5 shadow-sm transition-shadow hover:shadow-md">
+                    <AccordionTrigger className="py-0 hover:no-underline">
+                      <div className="flex items-center gap-4">
+                        <Plus className="h-5 w-5 text-[#F54933] flex-shrink-0" />
+                        <span className="text-lg font-semibold text-charcoal">What exactly is Parentis?</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4 pl-9">
+                      <p className="text-gray-600 leading-relaxed">
+                        Parentis is an AI-powered infrastructure that automatically extracts information from all your
+                        kids' apps, emails, and newsletters, then syncs everything to your existing calendar. You don't
+                        need another app - Parentis works behind the scenes to reduce your mental load.
+                      </p>
+                    </AccordionContent>
+                  </div>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="border-0">
+                  <div className="rounded-2xl border border-gray-200 bg-white px-6 py-5 shadow-sm transition-shadow hover:shadow-md">
+                    <AccordionTrigger className="py-0 hover:no-underline">
+                      <div className="flex items-center gap-4">
+                        <Plus className="h-5 w-5 text-[#F54933] flex-shrink-0" />
+                        <span className="text-lg font-semibold text-charcoal">When will Parentis be available?</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4 pl-9">
+                      <p className="text-gray-600 leading-relaxed">
+                        We're currently in development and planning to launch in early 2025. Join our waitlist to be
+                        among the first to get access and receive exclusive early-bird pricing.
+                      </p>
+                    </AccordionContent>
+                  </div>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="border-0">
+                  <div className="rounded-2xl border border-gray-200 bg-white px-6 py-5 shadow-sm transition-shadow hover:shadow-md">
+                    <AccordionTrigger className="py-0 hover:no-underline">
+                      <div className="flex items-center gap-4">
+                        <Plus className="h-5 w-5 text-[#F54933] flex-shrink-0" />
+                        <span className="text-lg font-semibold text-charcoal">How does the AI automation work?</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4 pl-9">
+                      <p className="text-gray-600 leading-relaxed">
+                        Our AI agent connects to your email and app accounts (with your permission) and intelligently
+                        reads through school newsletters, coach emails, team announcements, and more. It extracts key
+                        dates, deadlines, and action items, then automatically adds them to your existing calendar with
+                        proper categorization and color-coding per child.
+                      </p>
+                    </AccordionContent>
+                  </div>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className="border-0">
+                  <div className="rounded-2xl border border-gray-200 bg-white px-6 py-5 shadow-sm transition-shadow hover:shadow-md">
+                    <AccordionTrigger className="py-0 hover:no-underline">
+                      <div className="flex items-center gap-4">
+                        <Plus className="h-5 w-5 text-[#F54933] flex-shrink-0" />
+                        <span className="text-lg font-semibold text-charcoal">Is my family's data secure?</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4 pl-9">
+                      <p className="text-gray-600 leading-relaxed">
+                        Absolutely. We take security seriously and use bank-level encryption to protect your data. We
+                        only access the information necessary to extract calendar events and never share your data with
+                        third parties. Your privacy and security are our top priorities.
+                      </p>
+                    </AccordionContent>
+                  </div>
+                </AccordionItem>
+
+                <AccordionItem value="item-5" className="border-0">
+                  <div className="rounded-2xl border border-gray-200 bg-white px-6 py-5 shadow-sm transition-shadow hover:shadow-md">
+                    <AccordionTrigger className="py-0 hover:no-underline">
+                      <div className="flex items-center gap-4">
+                        <Plus className="h-5 w-5 text-[#F54933] flex-shrink-0" />
+                        <span className="text-lg font-semibold text-charcoal">How much will Parentis cost?</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4 pl-9">
+                      <p className="text-gray-600 leading-relaxed">
+                        We're finalizing our pricing structure, but we're committed to keeping it affordable for busy
+                        families. Early waitlist members will receive special launch pricing. Join the waitlist to be
+                        notified when pricing details are announced.
+                      </p>
+                    </AccordionContent>
+                  </div>
+                </AccordionItem>
+
+                <AccordionItem value="item-6" className="border-0">
+                  <div className="rounded-2xl border border-gray-200 bg-white px-6 py-5 shadow-sm transition-shadow hover:shadow-md">
+                    <AccordionTrigger className="py-0 hover:no-underline">
+                      <div className="flex items-center gap-4">
+                        <Plus className="h-5 w-5 text-[#F54933] flex-shrink-0" />
+                        <span className="text-lg font-semibold text-charcoal">
+                          Can I sync Parentis with my existing calendar?
+                        </span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4 pl-9">
+                      <p className="text-gray-600 leading-relaxed">
+                        Yes! That's the whole point. Parentis syncs directly with Google Calendar, Apple Calendar,
+                        Outlook, and other popular calendar platforms. You don't need to learn a new system - we work
+                        with the tools you already use.
+                      </p>
+                    </AccordionContent>
+                  </div>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </div>
+        </section>
+
         {/* Footer */}
-        <footer className="relative border-t border-gray-200 py-8">
+        <footer className="relative border-t border-[#FFFEFB] py-8">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
               <div className="flex items-center gap-3">

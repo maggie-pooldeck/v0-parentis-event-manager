@@ -63,7 +63,7 @@ export default function LandingPage() {
                   </p>
                   <p className="mt-6 text-lg leading-relaxed text-gray-600 text-pretty">
                     We're building one place to automatically extract info from all your kids' apps, emails, birthday
-                    invites and more.
+                    invites and more. No new calendars, just integration into your existing workflows.
                   </p>
                   <p className="mt-4 font-serif text-2xl text-charcoal text-pretty md:text-3xl">Be first in line.</p>
                   <div className="mt-8">

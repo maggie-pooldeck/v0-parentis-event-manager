@@ -35,38 +35,36 @@ export async function POST(request) {
     if (brevoResponse.ok || brevoResponse.status === 204) {
       // Send welcome email
       await fetch('https://api.brevo.com/v3/smtp/email', {
-        method: 'POST',
-        headers: {
-          'accept': 'application/json',
-          'content-type': 'application/json',
-          'api-key': process.env.BREVO_API_KEY
-        },
-        body: JSON.stringify({
-          sender: {
-            name: 'Parentis',
-            email: 'hello@parentis.app'
-          },
-          to: [{ email: email, name: name || '' }],
-          subject: "You're on the Parentis waitlist!",
-          htmlContent: `
-            <html>
-              <body style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-                <h2 style="color: #6477D5;">Welcome to Parentis!</h2>
-                <p>Hi${name ? ' ' + name : ''},</p>
-                <p>Thanks for joining the Parentis waitlist. We're building something special to help parents like you escape the chaos of managing multiple school and sports apps.</p>
-                <p><strong>What's next?</strong></p>
-                <ul>
-                  <li>We'll email you as soon as Parentis launches (expected January 2025)</li>
-                  <li>Early waitlist members get special pricing</li>
-                  <li>You'll be among the first to try it out</li>
-                </ul>
-                <p>In the meantime, feel free to reply to this email with any questions or feedback!</p>
-                <p>Best,<br>The Parentis Team</p>
-              </body>
-            </html>
-          `
-        })
-      });
+  method: 'POST',
+  headers: {
+    'accept': 'application/json',
+    'content-type': 'application/json',
+    'api-key': process.env.BREVO_API_KEY
+  },
+  body: JSON.stringify({
+    sender: {
+      name: 'Parentis',
+      email: 'hello@parentis.app'
+    },
+    to: [{ email: email, name: name || '' }],
+    subject: "You're on the Parentis waitlist!",
+    htmlContent: `
+      <html>
+        <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #1a1a1a; line-height: 1.6;">
+          <p>Hi${name ? ' ' + name : ''},</p>
+          
+          <p>Thanks for joining! We're building Parentis because we've experienced firsthand the insane number of apps and emails modern parents juggle. Parentis uses AI to extract all your kids' school and sports chaos, sync it automatically to your existing calendar, and provide weekly Sunday reports for the next few weeks so you can easily manage everything in one place.</p>
+          
+          <p>We'll email you when we launch. Early waitlist members get special pricing.</p>
+          
+          <p>All the best,</p>
+          
+          <p><strong>Team Parentis</strong></p>
+        </body>
+      </html>
+    `
+  })
+});
 
       return Response.json(
         { success: true, message: 'Successfully joined waitlist!' },

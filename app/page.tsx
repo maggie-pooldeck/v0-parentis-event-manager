@@ -1,8 +1,14 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 import { Mail, Calendar, Plus } from "lucide-react"
+import WaitlistModal from "@/components/WaitlistModal"
 
 export default function LandingPage() {
+  const [showModal, setShowModal] = useState(false)
+
   return (
     <>
       <div className="relative min-h-screen bg-[#FFFEFB]">
@@ -29,6 +35,9 @@ export default function LandingPage() {
                 <a href="mailto:hello@parentis.app">
                   <Button className="bg-[#6477D5] text-white hover:bg-[#5366C4]">Contact</Button>
                 </a>
+                <Button onClick={() => setShowModal(true)} className="bg-[#6477D5] text-white hover:bg-[#5366C4]">
+                  Join the waitlist
+                </Button>
               </div>
             </nav>
           </div>
@@ -67,7 +76,11 @@ export default function LandingPage() {
                   </p>
                   <p className="mt-4 font-serif text-2xl text-charcoal text-pretty md:text-3xl">Be first in line.</p>
                   <div className="mt-8">
-                    <Button size="lg" className="bg-[#6477D5] text-white hover:bg-[#5366C4]">
+                    <Button
+                      onClick={() => setShowModal(true)}
+                      size="lg"
+                      className="rounded-full bg-black text-white hover:bg-gray-800 px-8 py-6 text-lg font-medium transition-all hover:scale-105"
+                    >
                       Join the waitlist
                     </Button>
                   </div>
@@ -337,7 +350,11 @@ export default function LandingPage() {
                 <div className="flex items-center justify-center lg:order-0">
                   <div className="w-full max-w-md space-y-4">
                     <div className="rounded-lg border-2 border-dashed border-gray-300 bg-white p-8 text-center">
-                      <Button size="lg" className="bg-[#6477D5] text-white hover:bg-[#5366C4]">
+                      <Button
+                        onClick={() => setShowModal(true)}
+                        size="lg"
+                        className="bg-[#6477D5] text-white hover:bg-[#5366C4]"
+                      >
                         Upload Screenshot
                       </Button>
                     </div>
@@ -380,37 +397,21 @@ export default function LandingPage() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="relative py-16 md:py-20">
-          <div className="container relative z-10 mx-auto px-4">
-            <div className="relative mx-auto max-w-3xl">
-              {/* Colorful shape cluster background */}
-              <div className="relative h-80 overflow-hidden rounded-3xl">
-                {/* Shapes */}
-                <div className="absolute inset-0">
-                  <div className="absolute left-[5%] top-[10%] h-32 w-32 rounded-full bg-[#6477D5] opacity-80"></div>
-                  <div className="absolute right-[10%] top-[5%] h-40 w-40 rotate-45 rounded-3xl bg-[#E7FA99] opacity-80"></div>
-                  <div className="absolute left-[15%] bottom-[15%] h-36 w-36 rotate-12 rounded-2xl bg-[#99FADB] opacity-80"></div>
-                  <div className="absolute right-[15%] bottom-[10%] h-32 w-32 rounded-full bg-[#F54933] opacity-80"></div>
-                  <div className="absolute left-[40%] top-[20%] h-28 w-28 rotate-45 rounded-3xl bg-[#FA99E4] opacity-80"></div>
-                  <div className="absolute right-[35%] bottom-[20%] h-24 w-24 rounded-full bg-[#5ECAEB] opacity-80"></div>
-                  <div className="absolute left-[25%] top-[50%] h-20 w-20 rotate-12 rounded-2xl bg-[#6477D5] opacity-60"></div>
-                  <div className="absolute right-[25%] top-[40%] h-24 w-24 rounded-full bg-[#E7FA99] opacity-70"></div>
-                </div>
+        <section className="relative py-24 px-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="font-serif text-5xl font-semibold leading-tight text-charcoal sm:text-6xl">
+              Ready to escape the chaos?
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">Join 100+ parents on the waitlist</p>
 
-                {/* Text overlay */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
-                  <h2 className="font-serif text-4xl font-semibold text-balance text-black md:text-5xl">
-                    Ready to escape the chaos?
-                  </h2>
-                  <div className="mt-6">
-                    <Button size="lg" className="bg-black text-white hover:bg-gray-800">
-                      Join the waitlist
-                    </Button>
-                  </div>
-                  <p className="mt-3 text-lg text-gray-700">Join 100+ parents on the waitlist</p>
-                </div>
-              </div>
-            </div>
+            <Button
+              onClick={() => setShowModal(true)}
+              size="lg"
+              className="mt-8 rounded-full bg-black text-white hover:bg-gray-800 px-12 py-6 text-lg font-medium transition-all hover:scale-105"
+            >
+              Join the waitlist
+            </Button>
+            <p className="mt-4 text-sm text-gray-600">Join 100+ parents on the waitlist</p>
           </div>
         </section>
 
@@ -548,6 +549,8 @@ export default function LandingPage() {
           </div>
         </footer>
       </div>
+
+      <WaitlistModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </>
   )
 }

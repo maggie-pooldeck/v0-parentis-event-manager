@@ -33,11 +33,8 @@ export default function LandingPage() {
               </div>
               <div className="flex items-center gap-3">
                 <a href="mailto:hello@parentis.app">
-                  <Button className="bg-[#6477D5] text-white hover:bg-[#5366C4]">Contact</Button>
+                  <Button className="rounded-xl bg-[#6477D5] text-white hover:bg-[#5366C4] px-6 py-2">Contact</Button>
                 </a>
-                <Button onClick={() => setShowModal(true)} className="bg-[#6477D5] text-white hover:bg-[#5366C4]">
-                  Join the waitlist
-                </Button>
               </div>
             </nav>
           </div>
@@ -74,12 +71,12 @@ export default function LandingPage() {
                     We're building one place to automatically extract info from all your kids' apps, emails, birthday
                     invites and more. No new calendars, just integration into your existing workflows.
                   </p>
-                  <p className="mt-4 font-serif text-2xl text-charcoal text-pretty md:text-3xl">Be first in line.</p>
-                  <div className="mt-8">
+                  <p className="mt-6 font-serif text-2xl text-charcoal text-pretty md:text-3xl">Be first in line.</p>
+                  <div className="flex flex-col gap-4 sm:flex-row mt-6">
                     <Button
                       onClick={() => setShowModal(true)}
                       size="lg"
-                      className="rounded-full bg-black text-white hover:bg-gray-800 px-8 py-6 text-lg font-medium transition-all hover:scale-105"
+                      className="rounded-xl bg-[#6477D5] text-white hover:bg-[#5366C4] px-8 py-6 text-base font-medium transition-all hover:scale-105"
                     >
                       Join the waitlist
                     </Button>
@@ -397,21 +394,40 @@ export default function LandingPage() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="relative py-24 px-6">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="font-serif text-5xl font-semibold leading-tight text-charcoal sm:text-6xl">
-              Ready to escape the chaos?
-            </h2>
-            <p className="mt-4 text-lg text-gray-600">Join 100+ parents on the waitlist</p>
+        <section className="relative py-16 md:py-20">
+          <div className="container relative z-10 mx-auto px-4">
+            <div className="relative mx-auto max-w-3xl">
+              {/* Colorful shape cluster background */}
+              <div className="relative h-80 overflow-hidden rounded-3xl">
+                {/* Shapes */}
+                <div className="absolute inset-0">
+                  <div className="absolute left-[5%] top-[10%] h-32 w-32 rounded-full bg-[#6477D5] opacity-80"></div>
+                  <div className="absolute right-[10%] top-[5%] h-40 w-40 rotate-45 rounded-3xl bg-[#E7FA99] opacity-80"></div>
+                  <div className="absolute left-[15%] bottom-[15%] h-36 w-36 rotate-12 rounded-2xl bg-[#99FADB] opacity-80"></div>
+                  <div className="absolute right-[15%] bottom-[10%] h-32 w-32 rounded-full bg-[#F54933] opacity-80"></div>
+                  <div className="absolute left-[40%] top-[20%] h-28 w-28 rotate-45 rounded-3xl bg-[#FA99E4] opacity-80"></div>
+                  <div className="absolute right-[35%] bottom-[20%] h-24 w-24 rounded-full bg-[#5ECAEB] opacity-80"></div>
+                  <div className="absolute left-[25%] top-[50%] h-20 w-20 rotate-12 rounded-2xl bg-[#6477D5] opacity-60"></div>
+                  <div className="absolute right-[25%] top-[40%] h-24 w-24 rounded-full bg-[#E7FA99] opacity-70"></div>
+                </div>
 
-            <Button
-              onClick={() => setShowModal(true)}
-              size="lg"
-              className="mt-8 rounded-full bg-black text-white hover:bg-gray-800 px-12 py-6 text-lg font-medium transition-all hover:scale-105"
-            >
-              Join the waitlist
-            </Button>
-            <p className="mt-4 text-sm text-gray-600">Join 100+ parents on the waitlist</p>
+                {/* Text overlay */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
+                  <h2 className="font-serif text-4xl font-semibold text-balance text-black md:text-5xl">
+                    Ready to escape the chaos?
+                  </h2>
+
+                  <Button
+                    onClick={() => setShowModal(true)}
+                    size="lg"
+                    className="mt-8 rounded-xl bg-black text-white hover:bg-gray-800 px-12 py-6 text-base font-medium transition-all hover:scale-105"
+                  >
+                    Join the waitlist
+                  </Button>
+                  <p className="mt-4 text-sm text-gray-600">Join 100+ parents on the waitlist</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

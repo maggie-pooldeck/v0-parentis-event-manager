@@ -155,7 +155,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
               </Button>
 
               <p className="text-sm text-center text-gray-700 mt-4 font-medium">
-                Launching January 2025. Early waitlist members get 50% off for life.
+                Launching Early 2025. Early waitlist members get 50% off for life.
               </p>
             </div>
           )}

@@ -39,7 +39,7 @@ export async function POST(request) {
         },
         body: JSON.stringify({
           sender: {
-            name: "Parentis",
+            name: "Maggie",
             email: "hello@parentis.app",
           },
           to: [{ email: email, name: name || "" }],
@@ -50,40 +50,41 @@ export async function POST(request) {
               <head>
                 <meta charset="utf-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
               </head>
-              <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; line-height: 1.6; background-color: #ffffff;">
+              <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #262626; line-height: 1.6; background-color: #ffffff;">
                 
-                <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 28px; color: #6477D5; margin-bottom: 32px; font-weight: 700; line-height: 1.3;">
+                <h1 style="font-family: Georgia, 'Times New Roman', serif; font-size: 26px; color: #6477D5; margin: 0 0 32px 0; font-weight: 700; line-height: 1.3;">
                   This is not another app, this is a lifeline.
                 </h1>
                 
-                <p style="font-size: 16px; margin-bottom: 20px;">
+                <p style="font-size: 16px; margin: 0 0 20px 0; color: #262626;">
                   Hi${name ? " " + name : ""},
                 </p>
                 
-                <p style="font-size: 16px; margin-bottom: 20px;">
+                <p style="font-size: 16px; margin: 0 0 20px 0; color: #262626;">
                   Thanks for joining! We're building Parentis because we've experienced firsthand the insane number of apps and emails modern parents juggle.
                 </p>
                 
-                <p style="font-size: 16px; margin-bottom: 20px;">
+                <p style="font-size: 16px; margin: 0 0 20px 0; color: #262626;">
                   Parentis uses AI to extract all your kids' school and sports chaos, sync it automatically to your existing calendar, and provide weekly Sunday reports for the next few weeks so you can easily manage everything in one place.
                 </p>
                 
-                <p style="font-size: 16px; margin-bottom: 20px;">
-                  <strong>We'll email you when we launch. Early waitlist members get 50% off for life.</strong>
+                <p style="font-size: 16px; margin: 0 0 20px 0; color: #262626; font-weight: 600;">
+                  We'll email you when we launch.
                 </p>
                 
-                <p style="font-size: 16px; margin-bottom: 8px;">
+                <p style="font-size: 16px; margin: 32px 0 8px 0; color: #262626;">
                   All the best,
                 </p>
                 
-                <p style="font-size: 16px; margin-bottom: 32px;">
+                <p style="font-size: 16px; margin: 0 0 40px 0; color: #262626;">
                   Team Parentis
                 </p>
                 
-                <div style="margin-top: 40px;">
-                  <img src="/images/parentis-20logo-20no-20bk.png" alt="Parentis" style="max-width: 200px; height: auto;" />
+                <div style="margin-top: 40px; padding-top: 20px;">
+                  <p style="font-family: Georgia, 'Times New Roman', serif; font-size: 24px; color: #000000; margin: 0; font-weight: 400;">
+                    Parentis
+                  </p>
                 </div>
                 
               </body>
